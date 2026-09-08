@@ -1,0 +1,255 @@
+/* Estilo general de la página */
+body{
+margin:0; /* sin margen externo */
+padding:0; /* sin espacio interno */
+background:radial-gradient(circle at top,#0a0f2c,#02040f); /* fondo oscuro */
+color:#fff; /* texto blanco */
+font-family:"Segoe UI",Arial,sans-serif; /* fuente moderna */
+text-transform:uppercase; /* mayúsculas */
+letter-spacing:1px; /* separación */
+}
+/* Header principal */
+.contenido{
+display:flex; /* fila */
+justify-content:space-between; /* extremos */
+align-items:center; /* centrado vertical */
+padding:25px 40px; /* espacio interno */
+background:linear-gradient(90deg,#0b3d2e,#0d1b3d); /* fondo degradado */
+border-bottom:3px solid #ffcc00; /* línea inferior */
+}
+
+/* Logo */
+.logo{
+width:110px; /* tamaño fijo */
+transition:0.3s; /*el cambio se hace suave de animación */
+}
+
+.logo:hover{
+transform:scale(1.1); /* agranda un poquito el elemento (como si se acercara) */ 
+}
+
+/* Titulo */
+.titulo{
+text-align:center; /* centrado */
+flex:1; /* el elemento ocupa todo el espacio disponible */ 
+}
+
+/* Nombre del club */
+.titulo h1{
+font-family:"Arial Black",Impact,sans-serif; /* fuente fuerte */
+font-size:60px; /* grande */
+color:#ffcc00; /* dorado */
+margin:0; /* sin margen */
+}
+
+/* Subtitulo */
+.titulo h2{
+font-size:22px;
+margin:0;
+}
+
+/* Frase */
+.titulo p{
+font-size:14px;
+color:#9fffd2;
+}
+
+/* Menú principal */
+.menu-principal{
+display:flex; /* fila */
+justify-content:center; /* centrado */
+flex-wrap:wrap; /* hace que los elementos bajen a la siguiente línea si no caben */ 
+gap:20px;  /* espacio entre cajas */
+margin:30px 0;
+align-items:flex-start; /* alinea los elementos hacia arriba dentro del contenedor */
+}
+
+/* Cajas del menú */
+.menu{
+width:210px; /* tamaño fijo */
+position:relative; /* base para posicionar elementos internos como el menú desplegable sin sacarlo del flujo de la página */
+flex-shrink:0;  /* mantiene el tamaño del botón igual */
+background:linear-gradient(145deg,#0b3d2e,#0d1b3d); /* fondo */
+border:2px solid #ffcc00; /* borde */
+border-radius:14px; /* bordes */
+padding:12px; /* espacio interno */
+text-align:center; /* centrado */
+}
+
+/* Efecto hover caja */
+.menu:hover{
+transform:translateY(-5px); /* levanta */
+}
+
+/* Botón principal */
+.menu summary{
+cursor:pointer; /* mano */
+font-family:"Arial Black",sans-serif;
+font-size:16px;
+color:#ffcc00;
+list-style:none;
+}
+
+/* Quitar flecha */
+.menu summary::-webkit-details-marker{
+display:none;
+}
+
+/* Submenu oculto */
+.menu a{
+display:none;
+}
+
+/* Submenu activo */
+.menu[open] a{
+display:block;
+margin-top:8px;
+padding:12px;
+background:linear-gradient(90deg,#ffcc00,#ff8800);
+color:#000;
+font-weight:bold;
+text-decoration:none;
+border-radius:10px;
+font-size:13px;
+}
+
+/* Hover submenu */
+.menu a:hover{
+background:#fff;
+}
+
+/* Contenido principal */
+.contenedor{
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+padding:40px;
+}
+
+/* Bienvenida */
+.bienvenida{
+max-width:500px;
+text-align:center;
+}
+
+/* Titulo bienvenida */
+.bienvenida h2{
+font-family:"Arial Black",Impact,sans-serif;
+font-size:40px;
+color:#ffcc00;
+}
+
+/* Texto */
+.bienvenida p{
+font-size:15px;
+color:#cfeee0;
+line-height:1.5;
+}
+
+/* Botón principal */
+.boton{
+display:inline-block;
+margin-top:20px;
+padding:14px 25px;
+background:linear-gradient(90deg,#ffcc00,#ff8800);
+color:#000;
+font-weight:bold;
+border-radius:10px;
+text-decoration:none;
+}
+
+/* Hover botón */
+.boton:hover{
+transform:scale(1.08);
+background:#fff;
+}
+
+/* Imagen */
+aside img{
+width:350px;
+border-radius:15px;
+border:3px solid #ffcc00;
+box-shadow:0 0 20px rgba(255,204,0,0.25);
+}
+
+/* Footer */
+.footer{
+text-align:center;
+padding:18px;
+margin-top:30px;
+background:#0b1226;
+border-top:2px solid #ffcc00;/* borde arriba */
+color:#fff;
+}
+/* COMPUTADORA*/
+@media (min-width: 1025px){
+.menu-principal{
+justify-content:center;
+}
+.contenedor{
+flex-direction:row;
+}
+}
+/* TABLETS*/
+@media (max-width: 1024px){
+.contenido{
+flex-direction:column;
+text-align:center;
+}
+.logo{
+width:90px;
+margin-bottom:10px;
+}
+.titulo h1{
+font-size:45px;
+}
+.menu-principal{
+justify-content:center;
+gap:15px;
+}
+.contenedor{
+flex-direction:column;
+padding:20px;
+}
+aside img{
+width:300px;
+}
+}
+/* CELULARES*/
+@media (max-width: 600px){
+.contenido{
+flex-direction:column;
+padding:15px;
+}
+.titulo h1{
+font-size:32px;
+}
+.titulo h2{
+font-size:18px;
+}
+.menu-principal{
+flex-direction:column;
+align-items:center;
+}
+.menu{
+width:90%;
+}
+.contenedor{
+flex-direction:column;
+padding:15px;
+}
+aside img{
+width:100%;
+max-width:280px;
+}
+.bienvenida h2{
+font-size:28px;
+}
+.bienvenida p{
+font-size:14px;
+}
+.boton{
+padding:12px 18px;
+font-size:14px;
+}
+}
